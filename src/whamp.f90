@@ -178,7 +178,7 @@ PROGRAM WHAMP
               PRINT*,' TOO HEAVILY DAMPED!'
               PRINT*,'   '
               IERR=0
-              CALL OUTPT
+!              CALL OUTPT
               IF(KFS .EQ. 1) PLG = 1.D99
               IF(KFS .EQ. 2) ZLG = 1.D99
            end if

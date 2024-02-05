@@ -11,7 +11,7 @@ LD   = gfortran
 AR   = ar r
 BINDIR = .
 
-FFLAGS = -c -Wall -fPIC
+FFLAGS = -O2 -g -c -Wall -fPIC
 
 all: whamp libwhamp.a whamp_engine_test
 

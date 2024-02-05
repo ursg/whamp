@@ -18,10 +18,10 @@ maxkperp = 10.0
 # Sampling
 kpar_start = 1.0e-5
 kpar_end = 1.0
-kpar_samples = 40.0
+kpar_samples = 40
 kperp_start = 1.0e-5
 kperp_end = 10.0
-kperp_samples = 40.0
+kperp_samples = 40
 # Next one: do not start from 0.0, WHAMP does not like that.
 w_start = 0.001
 w_end = 4.0
@@ -102,7 +102,9 @@ print ("WHAMP done.")
 
 print ("Loading WHAMP data...")
 # old style is just load
-WHAMP=numpy.fromregex('WHAMP_CLI_output.txt', r' +([0-9]+\.[0-9]+) +([0-9]+.[0-9]+) +(-?[0-9]+\.[0-9]+E[\+\-][0-9]+) +(-?[0-9]+\.[0-9]+E[\+\-][0-9]+)', numpy.dtype('f8'))
+WHAMPout=numpy.fromregex('WHAMP_CLI_output.txt', r' +([0-9]+\.[0-9]+) +([0-9]+.[0-9]+) +(-?[0-9]+\.[0-9]+E[\+\-][0-9]+) +(-?[0-9]+\.[0-9]+E[\+\-][0-9]+)', [('z', 'f8'), ('p','f8'),('f','f8'),('gamma','f8')])
+WHAMP=WHAMPout.view('f8')
+WHAMP=WHAMP.reshape([len(WHAMPout),int(len(WHAMP)/len(WHAMPout))])
 print ("Loading done.")
 
 print ("Processing WHAMP data...")

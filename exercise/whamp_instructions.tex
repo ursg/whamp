@@ -1,0 +1,58 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{hyperref}
+
+%opening
+\title{WHAMP instructions/Advanced space plasma exercise}
+\author{Y. Pfau-Kempf}
+
+\begin{document}
+
+\maketitle
+
+% \begin{abstract}
+
+% \end{abstract}
+
+\section{Installing WHAMP}
+
+\begin{enumerate}
+   \item Get the WHAMP code by downloading at \url{https://github.com/ykempf/whamp}
+   or using the git command \\ \\
+   \verb=$ git clone git@github.com:ykempf/whamp.git whamp= \\ \\
+   which will download the code into the \verb=whamp= directory.
+   
+   \item Go to the code folder \\ \\
+   \verb=$ cd whamp/src/= \\ \\
+   and compile the code \\ \\
+   \verb=$ make= \\ \\
+   and do not worry about all the warnings. The file called \verb=whamp= is the executable you will need.
+\end{enumerate}
+
+By running this \verb=whamp= executable you can use WHAMP on a point-by-point basis as the instructions in the manual tell you to do. But that is a bit painstaking so we use a script to automatise the process.
+
+
+\section{Running WHAMP from the Python scripts}
+
+\begin{enumerate}
+   \item Copy the \verb=whamp= binary to the \verb=exercise= directory. \\ \\
+   \verb=$ cp whamp ../exercise=
+   
+   \item Run the script with Python \\ \\
+   \verb=$ cd ../exercise= \\
+   \verb=$ python3 <file>.py= \\ \\
+   and look at the 3D dispersion surfaces.
+   
+   \item If you wish to save a png instead of displaying the result on screen, swap the \verb=#= comment character between the last two lines of the
+script so that you use \\ \\
+   \verb+matplotlib.pyplot.savefig('plot.png', dpi=DPI)+ \\ \\
+   instead of \\ \\
+   \verb=matplotlib.pyplot.show()= \\ \\
+   which will write the file \verb=plot.png= to disk.
+\end{enumerate}
+
+
+\end{document}
